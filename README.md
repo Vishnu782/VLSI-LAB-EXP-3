@@ -1,19 +1,32 @@
 # SIMULATION AND IMPLEMENTATION OF MULTIPLIER
- AIM: To simulate and synthesis multiplier using Vivado 2023.
+
+ # AIM: 
+ To simulate and synthesis multiplier using Vivado 2023.
  
-**APPARATUS REQUIRED:**
+# APPARATUS REQUIRED:
       Vivado 2023.2
       
-**PROCEDURE:**
-STEP:1 Start the Xilinx navigator, Select and Name the New project. STEP:2 Select the device family, device, package and speed.
-STEP:3 Select new source in the New Project and select Verilog Module as the Source type.
-STEP:4 Type the File Name and Click Next and then finish button. Type the code and save it. STEP:5 Select the Behavioral Simulation in the Source Window and click the check syntax.
-STEP:6 Click the simulation to simulate the program and give the inputs and verify the outputs as per the truth table.
-STEP:7 Select the Implementation in the Sources Window and select the required file in the Processes Window. 
-STEP:8 Select Check Syntax from the Synthesize XST Process. Double Click in the FloorplanArea/IO/Logic-Post Synthesis process in the User Constraints process group. UCF(User constraint File) is obtained.
-STEP:9 In the Design Object List Window, enter the pin location for each pin in the Loc column Select save from the File menu. 
-STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here. 
-STEP:11 On the board, by giving required input, the LEDs starts to glow light, indicating the output.
+# PROCEDURE:
+STEP:1 Open Vivado: Launch Xilinx Vivado software on your computer.
+
+STEP:2 Create a New Project: Click on "Create Project" from the welcome page or navigate through "File" > "Project" > "New".
+
+STEP:3 Project Settings: Follow the prompts to set up your project. Specify the project name, location, and select RTL project type.
+
+STEP:4 Add Design Files: Add your Verilog design files to the project. You can do this by right-clicking on "Design Sources" in the Sources window, then selecting "Add Sources". Choose your Verilog files from the file browser.
+
+STEP:5 Specify Simulation Settings: Go to "Simulation" > "Simulation Settings". Choose your simulation language (Verilog in this case) and simulation tool (Vivado Simulator).
+
+STEP:6 Run Simulation: Go to "Flow" > "Run Simulation" > "Run Behavioral Simulation". This will launch the Vivado Simulator and compile your design for simulation.
+
+STEP:7 Set Simulation Time: In the Vivado Simulator window, set the simulation time if it's not set automatically. This determines how long the simulation will run.
+
+STEP:8 Run Simulation: Start the simulation by clicking on the "Run" button in the simulation window.
+
+STEP:9 View Results: After the simulation completes, you can view waveforms, debug signals, and analyze the behavior of your design..
+
+# LOGIC DIAGRAM:
+
 # 2 bit Multiplier:
 
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-3/assets/6987778/7713750f-65e6-41c0-8082-5005eac4031c)
@@ -26,6 +39,7 @@ STEP:11 On the board, by giving required input, the LEDs starts to glow light, i
 # Verilog code
 
 # Multiplexer 2bit
+```
 module multiplier2by2(C,A,B);
 input [1:0]A,B;
 output [3:0]C;
@@ -43,8 +57,9 @@ output sum, carry;
 xor(sum,a,b);
 and(carry,a,b);
 endmodule
------
+```
 # Multiplier 4 bit
+```
 module arraymultiplier(m,a,b);
 input [3:0]a,b;
 output [7:0]m;
@@ -87,7 +102,7 @@ buf(m[5],s[11]);
 buf(m[6],s[12]);
 buf(m[7],c[12]);
 endmodule
-------
+```
 
 # OUTPUT WAVE FORM:
 
@@ -98,8 +113,17 @@ endmodule
 # 4 BIT MULTIPLIER
 ![0bd41a19-1a0e-486c-a016-648340458f6c](https://github.com/Vishnu782/VLSI-LAB-EXP-3/assets/102226356/040083f0-7bd5-4605-b046-0f8d4c8022a5)
 
+# RTL Design
+
+# 2bit Multiplier
+<img width="760" alt="324393749-8af87b44-d89d-44f6-86aa-361176fd9c0d" src="https://github.com/Vishnu782/VLSI-LAB-EXP-3/assets/102226356/794f349a-77ea-45d5-be92-6230113c1e39">
+
+# 4bit Multiplier
+<img width="758" alt="324393789-5ee9e9e8-2916-4e4c-beb6-7eb3a04a8868" src="https://github.com/Vishnu782/VLSI-LAB-EXP-3/assets/102226356/bee658e1-0d39-4f51-8efe-a512f7c30555">
+
+
 # Result:
-   simulation and synthesis multiplier using Xilinx ISE completed successesfully
+   Thus the Simulation and Implementation of Multiplier is verified
 
 
 
